@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <div class ="header">
+        <b>Calculator Sarah Manalu</b>
+    </div>
+    
+    <div class="container">
+        <input class="btn btn-primary" id="nilai1" type="number" value="">
+        <input class="btn btn-primary" id="nilai2" type="number" value=""><br>
+        <button class="btn btn-success" id="tambah" value ="tambah"> + </button>
+        <button class="btn btn-danger" id="kurang"> - </button>
+        <button class="btn btn-warning" id="kali"> X </button>
+        <button class="btn btn-dark" id="bagi"> : </button>
+        <button class="btn btn-warning" id="hasil"> = </button>
+    </div>
+    
+    <script>       
+    let pilih;
+    var pilihan = document.getElementById("tambah").addEventListener("click", function(){
+        pilih = "tambah"
+    });
+    var pilihan = document.getElementById("kurang").addEventListener("click", function(){
+        pilih = "kurang"
+    });
+    var pilihan = document.getElementById("kali").addEventListener("click", function(){
+        pilih = "kali"
+    });
+    var pilihan = document.getElementById("bagi").addEventListener("click", function(){
+        pilih = "bagi"
+    });
+        
+    document.getElementById("hasil").addEventListener("click", function(){
+        let a = parseFloat(document.getElementById('nilai1').value);
+        let b = parseFloat(document.getElementById('nilai2').value);
+        if (pilih == "tambah" ){
+            var c = a + b;
+            alert(a + "+" + b + "=" + Math.round(c*100)/100);}
+            else if (pilih == "kurang"){
+                var c = a - b;
+                alert(a + "-" + b + "=" + Math.round(c*100)/100);}
+                else if (pilih == "kali"){
+                    var c = a * b;
+                    alert(a + "X" + b + "=" + Math.round(c*100)/100);}
+                    else if (pilih == "bagi"){
+                        var c = a / b;
+                        alert(a + ":" + b + "=" + Math.round(c*100)/100);}
+        })
+
+    </script>
+</body>
+</html>
